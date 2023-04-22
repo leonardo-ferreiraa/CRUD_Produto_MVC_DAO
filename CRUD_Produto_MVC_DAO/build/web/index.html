@@ -1,0 +1,40 @@
+
+<!-- IMPORTANTE: eu não terminei a parte do resultadoconsultatodos, lembrar de terminar essa parte
+e apagar esse comentário-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">     
+        <style>
+            input[type=submit]{
+                width: auto;
+                padding:9px;
+                background-color: green;
+                color: white;
+                border-radius: 10px;
+            }
+            input[type=text]{
+                padding:2px;
+                border-radius: 10px;
+            }
+            form{
+                text-align: left;
+                padding: 8px;
+                
+            }
+        </style>
+    </head>
+    <body>
+        <div>CRUD Produto</div>
+        <form name="form1" action="controle_produto" method="post">
+            
+            Id.........: <br><input type="text" name = "txtid"><br>
+            Descrição..: <br><input type="text" name ="txtdescricao"><br>
+            input......: <br><input type="text" name="txtpreco"><p>           
+            <input type="submit" name="btnoperacao" value="CADASTRAR"><p> 
+            <input type="submit" name="btnoperacao" value="Consultar por ID"><p> 
+            <input type="submit" name="btnoperacao" value="Consultar Todos">
+        </form>
+    </body>
+</html>
