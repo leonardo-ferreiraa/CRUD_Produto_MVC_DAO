@@ -44,6 +44,11 @@ public class controle_produto extends HttpServlet {
                 Produto p = new Produto();
                 p.setDescricao(request.getParameter("txtdescricao"));
                 p.setPreco(Double.parseDouble(request.getParameter("txtpreco")));
+                p.setQuantidade(Integer.parseInt(request.getParameter("txtquantidade")));
+                p.setFornecedor(request.getParameter("txtfornecedor"));
+                p.setSetor(Integer.parseInt(request.getParameter("txtsetor")));
+                p.setData(request.getParameter("txtdata"));
+                p.setTipo(request.getParameter("txttipo"));
                 ProdutoDAO pdao = new ProdutoDAO();
                 try {
                     pdao.cadastrar(p);
