@@ -44,7 +44,12 @@
                 %><td><%out.println(p.getId());%></td><%
                 %><td><%out.println(p.getDescricao());%></td><%
                 %><td><%out.println(p.getPreco());%></td><%
-                %><td><a href="http://localhost:8084/CRUD_Produto_MVC_DAO/controle_produto?btnoperacao=DELETAR&txtid=<%out.println(p.getId());%>"><img src="images/trash.png" width="25" height="25"></a></td><%
+                %><td><%out.println(p.getQuantidade());%></td><%
+                %><td><%out.println(p.getFornecedor());%></td><%
+                %><td><%out.println(p.getSetor());%></td><%
+                %><td><%out.println(p.getData());%></td><%
+                %><td><%out.println(p.getTipo());%></td><%
+                %><td><a href="http://localhost:8084/CRUD_Produto_MVC_DAO/controle_produto?btnoperacao=DELETARtxtid&=<%out.println(p.getId());%>"><img src="images/trash.png" width="25" height="25"></a></td><%
             %></tr><%
                 }
                 %></table><%
