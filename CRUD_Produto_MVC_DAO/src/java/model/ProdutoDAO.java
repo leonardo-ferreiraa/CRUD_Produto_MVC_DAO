@@ -24,9 +24,14 @@ public class ProdutoDAO {
         //se conecta com a classe conexao.java
         Connection con = Conexao.getConexao();
         //uma um comando do SQL para inserir um dado
-        PreparedStatement comando = con.prepareStatement("insert into produtos(descricao,preco)values(?,?)");
+        PreparedStatement comando = con.prepareStatement("insert into produtos(descricao,preco,quantidade,fornecedor,setor,data,tipo)values(?,?,?,?,?,?,?)");
         comando.setString(1, p.getDescricao());
         comando.setDouble(2, p.getPreco());
+        comando.setInt(3,p.getQuantidade());
+        comando.setString(4,p.getFornecedor());
+        comando.setInt(5,p.getSetor());
+        comando.setString(6,p.getData());
+        comando.setString(7,p.getTipo());
         
         comando.execute();
         con.close();
@@ -42,10 +47,15 @@ public class ProdutoDAO {
 
     public void update(Produto p) throws ClassNotFoundException, SQLException {
         Connection con = Conexao.getConexao();
-        PreparedStatement comando = con.prepareStatement("update produtos set descricao = ?, preco = ? where id = ?");
+        PreparedStatement comando = con.prepareStatement("update produtos set descricao = ?, preco = ?, quantidade = ?, fornecedor = ?, data = ?, tipo = ? where id = ?");
         comando.setString(1, p.getDescricao());
         comando.setDouble(2, p.getPreco());
-        comando.setInt(3, p.getId());
+        comando.setInt(3,p.getQuantidade());
+        comando.setString(4,p.getFornecedor());
+        comando.setInt(5,p.getSetor());
+        comando.setString(6,p.getData());
+        comando.setString(7,p.getTipo());
+        comando.setInt(8, p.getId());
         comando.execute();
         con.close();
     }
@@ -67,6 +77,11 @@ public class ProdutoDAO {
             prod.setId(rs.getInt("id"));
             prod.setDescricao(rs.getString("descricao"));
             prod.setPreco(rs.getDouble("preco"));
+            prod.setQuantidade(rs.getInt("quantidade"));
+            prod.setFornecedor(rs.getString("fornecedor"));
+            prod.setSetor(rs.getInt("setor"));
+            prod.setData(rs.getString("data"));
+            prod.setTipo(rs.getString("tipo"));
             
         }
         return prod;
@@ -83,6 +98,11 @@ public class ProdutoDAO {
             prod.setId(rs.getInt("id"));
             prod.setDescricao(rs.getString("descricao"));
             prod.setPreco(rs.getDouble ("preco"));
+            prod.setQuantidade(rs.getInt("quantidade"));
+            prod.setFornecedor(rs.getString("fornecedor"));
+            prod.setSetor(rs.getInt("setor"));
+            prod.setData(rs.getString("data"));
+            prod.setTipo(rs.getString("tipo"));
             lprod.add(prod);
             
         }
