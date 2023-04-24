@@ -56,7 +56,7 @@
             }   else
                 out.println("Consulta sem retorno");%>
         
-        <!terminar o resto da tabela>
+
         
     </body>
 </html>
